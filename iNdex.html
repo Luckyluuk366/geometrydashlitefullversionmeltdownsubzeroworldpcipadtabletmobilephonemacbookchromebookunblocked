@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Blocky Games</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#1e1e1e;
+    color:white;
+    text-align:center;
+    margin:0;
+}
+
+.games{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    max-width:900px;
+    margin:auto;
+    margin-top:30px;
+}
+
+.game{
+    background:#2b2b2b;
+    padding:12px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.game:hover{
+    transform:scale(1.05);
+}
+
+.game img{
+    width:100%;
+    border-radius:8px;
+}
+
+.player{
+    margin-top:40px;
+}
+
+iframe{
+    width:100%;
+    height:600px;
+    border:none;
+    border-radius:10px;
+}
+</style>
+
+<script>
+function openGame(link){
+    const iframe = document.getElementById("gameFrame");
+    iframe.src = link;
+}
+</script>
+
+</head>
+<body>
+
+<h1>🎮 Blocky Games</h1>
+
+<div class="games">
+
+    <div class="game" onclick="openGame('https://itch.io/embed/1071983')">
+        <img src="https://img.itch.zone/aW1nLzQ2NzU1NTkucG5n/original/xyz.png" alt="Slope">
+        <p>Slope (embed)</p>
+    </div>
+
+    <div class="game" onclick="openGame('https://itch.io/embed/1255144')">
+        <img src="https://i.imgur.com/wX0z9xU.png" alt="Arcade Game">
+        <p>Arcade Game</p>
+    </div>
+
+    <div class="game" onclick="openGame('https://www.google.com/logos/2010/pacman10-i.html')">
+        <img src="https://pacman.fun/images/pacman-icon.png" alt="Pac-Man">
+        <p>Pac-Man</p>
+    </div>
+
+</div>
+
+<div class="player">
+    <h2>🎮 Game laden</h2>
+    <iframe id="gameFrame"></iframe>
+</div>
+
+</body>
+</html>
